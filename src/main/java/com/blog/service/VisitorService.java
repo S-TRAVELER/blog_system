@@ -12,11 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 public interface VisitorService {
 
     /**
-     * 通过页名增加访客量
-     * @param pageName
+     * 通过页名更新访客人数
      */
-    Result addVisitorNumByPageName(String pageName, HttpServletRequest request);
+    void updateVisitorNumByPageName(String pageName, String visitorNum);
 
+    /**
+     * 发布文章后保存该文章的访客量
+     * @param pageName 文章url
+     */
+    void insertVisitorArticlePage(String pageName);
 
     /**
      * 通过页名获得访客量
@@ -26,19 +30,15 @@ public interface VisitorService {
     long getNumByPageName(String pageName);
 
     /**
-     * 发布文章后保存该文章的访客量
-     * @param pageName 文章url
+     * 通过页名增加访客量
+     * @param pageName
      */
-    void insertVisitorArticlePage(String pageName);
+    Result addVisitorNumByPageName(String pageName, HttpServletRequest request);
 
     /**
      * 获得总访问量
      * @return
      */
     long getTotalVisitor();
-
-    /**
-     * 通过页名更新访客人数
-     */
-    void updateVisitorNumByPageName(String pageName, String visitorNum);
+   
 }
