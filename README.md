@@ -1,7 +1,3 @@
 # blog_system
 
-hello world
-
-greate
-
-减肥
+电影、音乐和摄影博客系统（软工作业）
